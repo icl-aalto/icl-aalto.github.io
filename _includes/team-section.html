@@ -1,0 +1,37 @@
+{% comment %}
+  website-agent: 按角色分组的成员卡片
+  用法: {% include team-section.html role="phd" title="PhD Students" %}
+        role 可写多个, 逗号分隔: role="intern,research-assistant,visitor"
+        empty="..." : 该组没人时仍显示标题和这句话 (不写则整组隐藏)
+        wide=true   : 宽卡片 (人少、文字长的分组, 如 postdoc), 减少换行
+        nowrap_note=true : 备注单行显示, 可略微伸进卡片间距 (备注稍长时用)
+  卡片固定 7 个槽位 (照片/姓名/头衔/加入时间/单位/学历/共同导师)
+  有 program 时头衔行显示 "program, with 共同导师" (如 "ELLIS Postdoc, with Dominik Baumann"), 底部不再重复, 用 CSS subgrid 让同一行的各项对齐。
+  单一角色的分组里, 和组标题重复的默认头衔不显示, 只显示自定义头衔 (如 "ELLIS Postdoc")。
+{% endcomment %}
+{% assign roles = include.role | split: "," %}
+{% assign members = site.members | where_exp: "m", "roles contains m.role" | sort: "order" %}
+{% if members.size > 0 or include.empty %}
+{% if include.title %}<h2 class="team-heading">{{ include.title }}</h2>{% endif %}
+{% if members.size == 0 %}<p class="team-empty">{{ include.empty }}</p>{% else %}
+  <div class="team-grid{% if include.wide %} wide{% endif %}{% if include.nowrap_note %} nowrap-note{% endif %}">
+    {% for m in members %}
+      {% assign type = site.data.types[m.role] %}
+      {% if roles.size == 1 %}{% assign title = m.description %}{% else %}{% assign title = m.description | default: type.description %}{% endif %}
+      {% if m.program %}{% capture title %}{{ m.program }}{% if m.cosupervisors %}, with {{ m.cosupervisors | map: "name" | array_to_sentence_string }}{% endif %}{% endcapture %}{% endif %}
+      <a class="member-card" href="{{ m.url | relative_url }}">
+        <img class="member-photo" src="{{ m.image | relative_url | uri_escape }}" alt="{{ m.name }}" loading="lazy" {% include fallback.html %}>
+        <span class="member-name">{{ m.name }}</span>
+        <span class="member-role">{{ title }}</span>
+        <span class="member-since">{% if m.since %}Joined {{ m.since | append: "-01" | date: "%b %Y" }}{% endif %}</span>
+        <span class="member-affiliation">{{ m.affiliation }}</span>
+        <span class="member-extra{% if m.education or m.note %} has-content{% endif %}">
+          {% for e in m.education %}<b class="member-degree">{{ e.degree }}</b><span class="member-school">{{ e.school }}</span>{% endfor %}
+          {% if m.note %}<span class="member-note">{{ m.note }}</span>{% endif %}
+        </span>
+        <span class="member-cosup">{% if m.cosupervisors and m.program == nil %}Co-supervised with {{ m.cosupervisors | map: "name" | array_to_sentence_string }}{% endif %}</span>
+      </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endif %}

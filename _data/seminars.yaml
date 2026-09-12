@@ -1,0 +1,69 @@
+# Seminar / 组会日程。一条 = 一个报告; 同一天两个报告就写两条。
+# 页面按访客当天日期自动分成 Upcoming / Past; /seminars.ics 可订阅到日历。
+#
+# - date: 2026-10-01             # 必填, YYYY-MM-DD
+#   time: "14:00-15:00"          # 可选, 赫尔辛基时间; 不写则用 seminar/index.md 里的默认时间
+#   location: "Room T5, CS Building"   # 可选, 不写用默认地点。不要放 Zoom 链接 (公开网页)
+#   type: internal               # internal (组内) | invited (外部嘉宾)
+#   member: doudou-zhang         # 组内成员: 填 _members/ 里的文件名, 自动带头像和链接
+#   speaker: Jane Doe            # 外部嘉宾: 姓名
+#   affiliation: University X    # 外部嘉宾: 单位
+#   link: https://...            # 外部嘉宾: 主页
+#   photo: images/seminar/jane-doe.jpg   # 外部嘉宾: 可选照片
+#   title: "Talk title"          # 未定可不写, 显示 "Title TBA"
+#   abstract: |                  # 可选, markdown
+#     ...
+#   bio: |                       # 外部嘉宾简介, 可选
+#     ...
+#   slides: https://...          # 报告后补
+#   recording: https://...
+#   paper: https://...
+#   cancelled: true              # 取消的场次, 页面上划掉, 不进日历
+#   note: "Joint session with ..." # 可选备注
+#
+# 空档期: `make seminar-slots` 按双周批量生成只有日期的条目 (speaker TBD), 之后逐条填人。
+
+- date: 2026-05-29
+  type: internal
+  member: wenwen-hou
+  title: "Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection"
+
+- date: 2026-06-25
+  type: internal
+  member: doudou-zhang
+  title: "Generative Modeling via Drifting"
+
+- date: 2026-08-06
+  time: "10:00-11:00"
+  type: invited
+  speaker: "Yivan Zhang"
+  affiliation: "The University of Tokyo & RIKEN AIP"
+  link: https://yivan.xyz/
+  title: "An Algebraic Approach to Modeling Behavior in Reinforcement Learning Systems"
+  abstract: |
+    A reinforcement learning agent produces more than sequences of rewards; it gives rise to many notions of behavior,
+    including values, safety properties, bisimulation relations, and behavioral metrics. To define and understand these
+    notions in a unified way, this talk begins by asking how reward sequences become policy evaluation objectives.
+    Discounted sum, max, mean, variance, and the Sharpe ratio can all be described through a common recursive aggregation pattern.
+
+    This perspective leads to a broader coalgebraic framework in which predicates, quantities, relations, and metrics are
+    treated uniformly as behavioral structures satisfying fixed-point or post-fixed-point conditions with respect to the
+    system dynamics. The talk will also discuss how coalgebras represent one-step system behavior, and how coalgebra
+    homomorphisms, pullbacks, and pushforwards relate behavioral structures across systems. It will conclude with future
+    directions involving behavior-preserving objectives, approximate abstractions, and stateful agents.
+  bio: >-
+    Yivan Zhang is an Assistant Professor in the Department of Complexity Science and Engineering, Graduate School of
+    Frontier Sciences, The University of Tokyo, and a Visiting Scientist in the Imperfect Information Learning Team at the
+    RIKEN Center for Advanced Intelligence Project. Yivan received a Ph.D. from The University of Tokyo under the supervision
+    of Prof. Masashi Sugiyama. Yivan's research spans the theory and application of machine learning, including representation
+    learning and reinforcement learning, with a recent focus on algebra and applied category theory in machine learning.
+
+- date: 2026-10-02
+  type: internal
+  member: weiguo-pian
+
+- date: 2026-10-16
+  type: invited
+  speaker: "Science-IT RSE Support"
+  affiliation: "Aalto University"
+  title: "Research Software Engineering Support at Aalto"

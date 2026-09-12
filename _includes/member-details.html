@@ -1,0 +1,22 @@
+{% comment %}
+  website-agent: 成员页上的结构化信息 (与团队页卡片同一套字段)
+{% endcomment %}
+{% assign m = page %}
+{% assign type = site.data.types[m.role] %}
+<dl class="member-details">
+  {% unless m.role == "principal-investigator" %}{%- comment -%}PI: 头衔已在头像下, 不重复{%- endcomment -%}
+  <dt>Role</dt>
+  <dd>{{ m.description | default: type.description }}{% if m.since %} · joined {{ m.since | append: "-01" | date: "%B %Y" }}{% endif %}</dd>
+  {% if m.affiliation %}<dt>Affiliation</dt><dd>{{ m.affiliation }}</dd>{% endif %}
+  {% endunless %}
+  {% if m.program %}<dt>Programme</dt><dd>{{ m.program }}</dd>{% endif %}
+  {% if m.cosupervisors %}
+    <dt>Co-supervisors</dt>
+    <dd>{% for c in m.cosupervisors %}{% if c.link %}<a href="{{ c.link }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd>
+  {% endif %}
+  {% if m.education %}
+    <dt>Education</dt>
+    <dd><ul>{% for e in m.education %}<li><b>{{ e.degree }}</b>, {{ e.school }}</li>{% endfor %}</ul></dd>
+  {% endif %}
+  {% if m.note %}<dt>Note</dt><dd>{{ m.note }}</dd>{% endif %}
+</dl>

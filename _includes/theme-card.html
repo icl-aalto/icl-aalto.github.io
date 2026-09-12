@@ -1,0 +1,9 @@
+{% comment %}
+  website-agent: 研究方向卡片 (无需配图)
+  用法: {% include theme-card.html icon="fa-solid fa-shield-halved" title="..." text="..." %}
+{% endcomment %}
+<div class="theme-card">
+  <span class="theme-card-icon">{% include icon.html icon=include.icon %}</span>
+  <h3>{{ include.title }}</h3>
+  <p>{{ include.text | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+</div>

@@ -1,0 +1,169 @@
+# Publications. Source of truth for the Research page.
+# _cite/cite.py turns this into _data/citations.yaml (runs in CI on push, or locally via `make cite`).
+#
+# Entries are entered manually (most papers only have OpenReview links, which Manubot cannot cite).
+# An entry with `id: arxiv:XXXX.XXXXX` or `id: doi:...` is filled in automatically instead.
+#   type:      paper | preprint | thesis
+#   highlight: true  -> shown under "Selected"
+#   date:      only the year is displayed; the month is used for ordering
+# Author markers: ✉ corresponding, † equal contribution. Lab PI in bold.
+
+# ---------------- under review
+- title: Informing Acquisition Functions via Foundation Models for Molecular Discovery
+  authors: ["**Qi Chen**✉", Fabio Ramos, Alan Aspuru-Guzik, "Florian Shkurti✉"]
+  publisher: arXiv preprint
+  date: 2025-12-01
+  type: preprint
+  highlight: true
+  link: https://arxiv.org/abs/2512.13935
+  buttons:
+    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2512.13935" }
+  tags: [Bayesian optimization, AI for science, foundation models]
+
+- title: Constrained Look-ahead Guidance for Interference-Aware Flow Editing
+  authors: [Doudou Zhang, "**Qi Chen**✉"]
+  publisher: Under review
+  type: preprint
+  highlight: true
+  tags: [generative models, flow models]
+
+- title: "Position: Dataset Misuse Risk Evaluation Requires Operationalizing the Burden of Proof"
+  authors: [Xing Shen, Yifan Qin, Gezheng Xu, "**Qi Chen**", Changjian Shui]
+  publisher: Under review
+  type: preprint
+  highlight: true
+  tags: [trustworthy AI]
+
+# ---------------- published
+- title: Discretized Density-Guided Source-Free Adaptation for Continuous Targets
+  authors: [Gezheng Xu, "**Qi Chen**", Qiuhao Zeng, Charles Ling, Boyu Wang]
+  publisher: ICML 2026 (Spotlight, 2.2%)
+  date: 2026-07-01
+  type: paper
+  highlight: true
+  tags: [domain adaptation]
+
+- title: "Generalization in VAE and Diffusion Models: A Unified Information-Theoretic Analysis"
+  authors: ["**Qi Chen**✉", Jerry Zhu, "Florian Shkurti✉"]
+  publisher: ICLR 2025
+  date: 2025-04-01
+  type: paper
+  highlight: true
+  link: https://openreview.net/forum?id=NGB6YNnO5o
+  buttons:
+    - { type: link, text: OpenReview, link: "https://openreview.net/forum?id=NGB6YNnO5o" }
+    - { type: paper, link: "https://openreview.net/pdf?id=NGB6YNnO5o" }
+    - { type: source, text: Code, link: "https://github.com/livreQ/InfoGenAnalysis" }
+  tags: [generative models, learning theory]
+
+- title: Towards Understanding Evolving Patterns in Sequential Data
+  authors: [Qiuhao Zeng, Longkai Huang, "**Qi Chen**", Charles Ling, Boyu Wang]
+  publisher: NeurIPS 2024
+  date: 2024-12-01
+  type: paper
+  tags: [sequence prediction]
+
+- title: Intersectional Unfairness Discovery
+  authors: [Gezheng Xu, "**Qi Chen**", Charles Ling, Boyu Wang, Changjian Shui]
+  publisher: ICML 2024
+  date: 2024-07-01
+  type: paper
+  highlight: true
+  tags: [algorithmic fairness]
+
+- title: Theoretical Framework for Prior Knowledge Transfer in Deep Learning
+  authors: ["**Qi Chen**"]
+  publisher: "Ph.D. thesis, Laval University (Excellent, Honor List)"
+  date: 2024-03-01
+  type: thesis
+  link: https://corpus.ulaval.ca/server/api/core/bitstreams/701625ab-10af-4c2e-a306-cf4e280f7840/content
+  buttons:
+    - { type: paper, text: Thesis, link: "https://corpus.ulaval.ca/server/api/core/bitstreams/701625ab-10af-4c2e-a306-cf4e280f7840/content" }
+    - { type: slides, link: "https://livreq.github.io/images/profile/PhD_Thesis_defense.pdf" }
+  tags: [learning theory, transfer learning]
+
+- title: "ProxEdit: Improving Tuning-Free Real Image Editing with Proximal Guidance"
+  authors: [Ligong Han, Song Wen, "**Qi Chen**", Zhixing Zhang, Kunpeng Song, Mengwei Ren, et al.]
+  publisher: WACV 2024
+  date: 2024-01-01
+  type: paper
+  tags: [generative models]
+
+- title: "On the Stability-Plasticity Dilemma in Continual Meta-Learning: Theory and Algorithm"
+  authors: ["**Qi Chen**✉", Changjian Shui, Ligong Han, "Mario Marchand✉"]
+  publisher: NeurIPS 2023
+  date: 2023-12-01
+  type: paper
+  highlight: true
+  link: https://openreview.net/forum?id=DNHGKeOhLl
+  buttons:
+    - { type: link, text: OpenReview, link: "https://openreview.net/forum?id=DNHGKeOhLl" }
+    - { type: paper, link: "https://openreview.net/pdf?id=DNHGKeOhLl" }
+    - { type: source, text: Code, link: "https://github.com/livreQ/DynamicCML" }
+  tags: [continual learning, meta-learning, learning theory]
+
+- title: Algorithm-Dependent Bounds for Representation Learning of Multi-Source Domain Adaptation
+  authors: ["**Qi Chen**", "Mario Marchand✉"]
+  publisher: AISTATS 2023
+  date: 2023-04-01
+  type: paper
+  highlight: true
+  link: https://proceedings.mlr.press/v206/chen23h/chen23h.pdf
+  buttons:
+    - { type: paper, link: "https://proceedings.mlr.press/v206/chen23h/chen23h.pdf" }
+    - { type: source, text: Code, link: "https://github.com/livreQ/IMDA" }
+  tags: [domain adaptation, learning theory]
+
+- title: On Learning Fairness and Accuracy on Multiple Subgroups
+  authors: ["Changjian Shui†", "Gezheng Xu†", "**Qi Chen**", Jiaqi Li, Charles X. Ling, Tal Arbel, Boyu Wang, Christian Gagné]
+  publisher: NeurIPS 2022
+  date: 2022-12-01
+  type: paper
+  highlight: true
+  link: https://proceedings.neurips.cc/paper_files/paper/2022/file/dc96134e169de5aea1ba1fc34dfb8419-Paper-Conference.pdf
+  buttons:
+    - { type: paper, link: "https://proceedings.neurips.cc/paper_files/paper/2022/file/dc96134e169de5aea1ba1fc34dfb8419-Paper-Conference.pdf" }
+  tags: [algorithmic fairness]
+
+- title: A Novel Domain Adaptation Theory with Jensen–Shannon Divergence
+  authors: [Changjian Shui, "**Qi Chen**", Jun Wen, Fan Zhou, Christian Gagné, Boyu Wang]
+  publisher: Knowledge-Based Systems
+  date: 2022-09-01
+  type: paper
+  link: https://openreview.net/pdf?id=ilDfZG2BVDh
+  buttons:
+    - { type: paper, link: "https://openreview.net/pdf?id=ilDfZG2BVDh" }
+  tags: [domain adaptation, learning theory]
+
+- title: Fair Representation Learning through Implicit Path Alignment
+  authors: [Changjian Shui, "**Qi Chen**", Jiaqi Li, Boyu Wang, Christian Gagné]
+  publisher: ICML 2022
+  date: 2022-07-01
+  type: paper
+  link: https://arxiv.org/abs/2205.13316
+  buttons:
+    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2205.13316.pdf" }
+  tags: [algorithmic fairness]
+
+- title: "Generalization Bounds for Meta-Learning: An Information-Theoretic Analysis"
+  authors: ["**Qi Chen**✉", Changjian Shui, "Mario Marchand✉"]
+  publisher: NeurIPS 2021 (Spotlight, 3%)
+  date: 2021-12-01
+  type: paper
+  highlight: true
+  link: https://openreview.net/forum?id=9J2wV5E1Aq_
+  buttons:
+    - { type: link, text: OpenReview, link: "https://openreview.net/forum?id=9J2wV5E1Aq_" }
+    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2109.14595" }
+    - { type: source, text: Code, link: "https://github.com/livreQ/meta-sgld" }
+  tags: [meta-learning, learning theory]
+
+- title: "Beyond H-Divergence: Domain Adaptation Theory with Jensen-Shannon Divergence"
+  authors: [Changjian Shui, "**Qi Chen**", Jun Wen, Fan Zhou, Christian Gagné, Boyu Wang]
+  publisher: arXiv preprint
+  date: 2020-07-01
+  type: paper
+  link: https://arxiv.org/abs/2007.15567
+  buttons:
+    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2007.15567.pdf" }
+  tags: [domain adaptation, learning theory]

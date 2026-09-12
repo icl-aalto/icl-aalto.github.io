@@ -1,0 +1,663 @@
+---
+---
+
+// website-agent additions: news list, research theme cards, hero tweaks
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: solid 1px var(--light-gray);
+  line-height: var(--compact);
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-list time {
+  color: var(--primary);
+  font-weight: var(--semi-bold);
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+// 研究方向卡片: 平面、细线, 编号式排版 (避免“模版感”的彩色顶条和圆形图标底)
+.theme-grid {
+  counter-reset: theme;
+}
+
+.theme-card {
+  position: relative;
+  padding: 22px 22px 24px;
+  border: solid 1px var(--light-gray);
+  border-radius: 4px;
+  background: var(--background);
+  text-align: left;
+  counter-increment: theme;
+  transition: border-color var(--transition);
+}
+
+.theme-card:hover {
+  border-color: var(--primary);
+}
+
+.theme-card::before {
+  content: counter(theme, decimal-leading-zero);
+  display: block;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px var(--light-gray);
+  font-family: var(--heading);
+  font-size: 0.8rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: 0.12em;
+  color: var(--primary);
+}
+
+.theme-card h3 {
+  margin: 0 0 8px;
+  font-size: var(--large);
+}
+
+.theme-card p {
+  margin: 0;
+  line-height: var(--compact);
+  color: var(--dark-gray);
+}
+
+.theme-card-icon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+.lead {
+  font-size: var(--large);
+  line-height: 1.7;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.affiliation-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  color: var(--dark-gray);
+}
+
+.team-heading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  justify-content: center;
+  column-gap: 30px;
+  row-gap: 0;
+  margin: 30px 0 10px;
+}
+
+.team-grid.wide {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+}
+
+.team-grid.wide .member-extra,
+.team-grid.wide .member-cosup {
+  width: 100%;
+}
+
+// 宽卡片里学历居中 (两列仍对齐, 分隔线保持全宽)
+.team-grid.wide .member-extra.has-content {
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+}
+
+// 每张卡片占 6 行并继承外层网格的行 (subgrid): 同一行卡片的各项自动对齐
+.member-card {
+  display: grid;
+  grid-row: span 7;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  justify-items: center;
+  align-content: start;
+  padding-bottom: 34px;
+  text-align: center;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.45;
+}
+
+.member-card > span:empty {
+  display: block;
+  min-height: 0;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center 25%;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.member-card:hover .member-photo {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 3px var(--primary);
+}
+
+.member-name {
+  font-family: var(--heading);
+  font-weight: var(--bold);
+  font-size: var(--large);
+}
+
+.member-card .member-name {
+  align-self: end;
+}
+
+.member-card:hover .member-name {
+  color: var(--primary);
+}
+
+.member-role {
+  color: var(--primary);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.member-since {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+}
+
+.member-affiliation {
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.member-cosup {
+  width: 90%;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--dark-gray);
+}
+
+.member-cosup b {
+  font-weight: var(--semi-bold);
+  color: var(--primary);
+}
+
+.member-extra {
+  width: 90%;
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+}
+
+// 学历: 左对齐两列 (学位 | 学校), 学校名换行时仍与学位对齐
+.member-extra.has-content {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 10px;
+  row-gap: 3px;
+  align-content: start;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: solid 1px var(--light-gray);
+  text-align: left;
+}
+
+.member-degree {
+  font-size: 0.75rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+  color: var(--primary);
+}
+
+.member-note {
+  grid-column: 1 / -1;
+  font-style: italic;
+  text-align: center;
+}
+
+.team-empty {
+  text-align: center;
+  color: var(--dark-gray);
+  font-style: italic;
+}
+
+// 成员页上的结构化信息
+.member-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 20px;
+  margin: 10px 0 30px;
+  text-align: left;
+}
+
+.member-details dt {
+  font-weight: var(--semi-bold);
+  color: var(--dark-gray);
+}
+
+.member-details dd {
+  margin: 0;
+}
+
+.member-details ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.pi-block {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+
+.pi-block img {
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.pi-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.pi-photo:hover .member-name {
+  color: var(--primary);
+}
+
+.pi-block h2 {
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .pi-block {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .pi-block h2 {
+    text-align: center;
+  }
+}
+
+// 深色页头/页脚/强调区块: 用主题色做底, 而不是模版默认的近黑色
+header.background[data-dark="true"],
+footer.background[data-dark="true"],
+section.background[data-dark="true"] {
+  background: color-mix(in srgb, var(--primary) 62%, #07111d);
+}
+
+header.background[data-dark="true"]:before,
+footer.background[data-dark="true"]:before,
+section.background[data-dark="true"]:before {
+  opacity: 0.55;
+}
+
+// 浅色页头 (lab.yaml theme.header: light): 白底、不叠背景图、底部一条主色细线
+header.background[data-dark="false"] {
+  background: var(--background);
+  box-shadow: none;
+  border-bottom: solid 1px var(--light-gray);
+}
+
+header.background[data-dark="false"]:before {
+  display: none;
+}
+
+header[data-dark="false"][data-big] {
+  border-bottom: solid 3px var(--primary);
+}
+
+header[data-dark="false"] nav a:hover {
+  color: var(--primary);
+}
+
+header[data-dark="false"] .title {
+  color: var(--primary);
+  letter-spacing: 0.08em;
+}
+
+header[data-dark="false"] .subtitle {
+  color: #55606b;
+  opacity: 1;
+  font-weight: var(--regular);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8em;
+}
+
+// 窄栏里两端对齐会拉出大空隙
+.theme-card p,
+.news-list span,
+.member-bio,
+.lead,
+.pi-block p {
+  text-align: left;
+}
+
+.affiliation-logos a {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .affiliation-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .affiliation-logos span {
+    display: none;
+  }
+}
+
+// 完整标志 (图形 + 文字) 作页头 logo 时需要更高, 否则副标题那行字太小
+header .logo:has(svg[data-lockup]) {
+  height: 58px;
+}
+
+header[data-big] .logo:has(svg[data-lockup]) {
+  height: 130px;
+}
+
+// ---- seminar
+
+.seminar-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  color: var(--dark-gray);
+}
+
+.seminar-facts .icon {
+  margin-right: 6px;
+  color: var(--primary);
+}
+
+.talk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.talk {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 24px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: var(--background);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.talk.talk-next {
+  box-shadow: 0 0 0 2px var(--primary), var(--shadow);
+}
+
+.talk[data-cancelled] .talk-title,
+.talk[data-cancelled] .talk-speaker {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.talk-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--primary) 9%, transparent);
+  color: var(--primary);
+  align-self: start;
+}
+
+.talk-day {
+  font-size: 2rem;
+  font-weight: var(--bold);
+  line-height: 1;
+}
+
+.talk-month {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.talk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.talk-badge {
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: var(--semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+.talk-badge.invited {
+  background: var(--primary);
+  color: #fff;
+}
+
+.talk-badge.cancelled {
+  background: #ef4444;
+  color: #fff;
+}
+
+.talk-title {
+  margin: 8px 0 10px;
+  font-size: var(--large);
+  line-height: var(--compact);
+  text-align: left;
+}
+
+.talk-speaker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: var(--compact);
+}
+
+.talk-speaker img {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.talk-speaker a {
+  font-weight: var(--semi-bold);
+}
+
+.talk-affiliation {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.talk-note {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  text-align: left;
+}
+
+.talk-details {
+  margin: 14px 0 0;
+}
+
+.talk-details p {
+  text-align: left;
+}
+
+.talk-links {
+  margin-top: 10px;
+}
+
+.talk-empty {
+  color: var(--dark-gray);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .talk {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  .talk-date {
+    flex-direction: row;
+    gap: 8px;
+    padding: 6px 12px;
+    justify-self: start;
+  }
+  .talk-day {
+    font-size: 1.3rem;
+  }
+  .talk-month {
+    margin-top: 0;
+  }
+}
+
+// ---- Join Us: past calls
+
+.past-call {
+  margin: 20px 0;
+  padding: 4px 24px 8px;
+  border-left: solid 3px var(--light-gray);
+  color: var(--dark-gray);
+}
+
+.past-call h3 {
+  margin-top: 14px;
+  text-align: left;
+  color: var(--dark-gray);
+}
+
+.call-closed {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: var(--semi-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+// 与正文同宽的导语段落 (如 Join Us 开头)
+.lead.lead-wide {
+  max-width: none;
+}
+
+// 备注单行: 居中并允许向两侧卡片间距溢出 (grid 默认 unsafe 对齐, 两侧对称)
+.team-grid.nowrap-note .member-note {
+  justify-self: center;
+  white-space: nowrap;
+}
+
+// 两端对齐的导语段落 (首页开头)
+.lead.lead-justify {
+  text-align: justify;
+  hyphens: none;
+}
+
+// ---- Research: 资助与计算资源 logo 墙
+
+.support-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px 44px;
+  margin: 34px 0 10px;
+}
+
+.support-logos a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+// 按 logo 形状统一视觉大小: 横版扁 logo 矮一些, 方形 logo 高一些
+.support-logos img {
+  height: 52px;
+  width: auto;
+  max-width: 340px;
+  object-fit: contain;
+}
+
+.support-logos img.wide {
+  height: 30px;
+}
+
+.support-logos img.flat {
+  height: 26px;
+}
+
+.support-logos a:hover span {
+  color: var(--primary);
+}

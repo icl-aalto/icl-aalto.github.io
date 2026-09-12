@@ -1,0 +1,56 @@
+---
+layout: null
+permalink: /seminars.ics
+seminar_page: seminar/index.md
+---
+{%- assign info = site.pages | where: "path", page.seminar_page | first -%}
+{%- assign info = info.seminar -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{ site.title }}//Seminar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.subtitle }} Seminar
+X-WR-TIMEZONE:Europe/Helsinki
+BEGIN:VTIMEZONE
+TZID:Europe/Helsinki
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0300
+TZNAME:EEST
+DTSTART:19700329T030000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0200
+TZNAME:EET
+DTSTART:19701025T040000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+{%- assign no_talks = "" | split: "," -%}
+{%- assign talks = site.data.seminars | default: no_talks | sort: "date" -%}
+{%- for t in talks -%}
+{%- unless t.cancelled -%}
+{%- if t.member -%}{%- assign m = site.members | where: "slug", t.member | first -%}{%- assign who = m.name -%}{%- else -%}{%- assign who = t.speaker -%}{%- endif -%}
+{%- assign day = t.date | date: "%Y%m%d" -%}
+{%- assign slot = t.time | default: info.time | default: "" | remove: " " | split: "-" -%}
+{%- capture summary -%}{% if who %}{{ who }}: {% endif %}{{ t.title | default: "Lab seminar" }}{%- endcapture %}
+BEGIN:VEVENT
+UID:{{ day }}-{{ t.member | default: t.speaker | default: "slot" | slugify }}@{{ site.subtitle | slugify }}
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%SZ" }}
+{% if slot.size == 2 -%}
+DTSTART;TZID=Europe/Helsinki:{{ day }}T{{ slot[0] | remove: ":" }}00
+DTEND;TZID=Europe/Helsinki:{{ day }}T{{ slot[1] | remove: ":" }}00
+{% else -%}
+DTSTART;VALUE=DATE:{{ day }}
+{% endif -%}
+SUMMARY:{{ summary | strip_newlines | replace: ",", "\," | replace: ";", "\;" }}
+{% assign loc = t.location | default: info.location %}{% if loc and loc != "" %}LOCATION:{{ loc | replace: ",", "\," | replace: ";", "\;" }}
+{% endif -%}
+URL:{{ site.url }}{{ "seminar/" | relative_url }}
+END:VEVENT
+{%- endunless -%}
+{%- endfor %}
+END:VCALENDAR

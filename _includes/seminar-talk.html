@@ -1,0 +1,57 @@
+{% comment %}
+  website-agent: 一条 seminar 报告. 用法: {% include seminar-talk.html talk=t %}
+{% endcomment %}
+{% assign t = include.talk %}
+{% assign info = page.seminar %}
+{% if t.member %}
+  {% assign m = site.members | where: "slug", t.member | first %}
+{% else %}
+  {% assign m = nil %}
+{% endif %}
+{% assign speaker = m.name | default: t.speaker %}
+{% assign photo = m.image | default: t.photo %}
+{% assign link = m.url | default: t.link %}
+{% assign affiliation = t.affiliation %}
+{% if m and affiliation == nil %}{% assign affiliation = site.subtitle %}{% endif %}
+<article class="talk" data-date="{{ t.date | date: '%Y-%m-%d' }}" {% if t.cancelled %}data-cancelled{% endif %}>
+  <div class="talk-date">
+    <span class="talk-day">{{ t.date | date: "%-d" }}</span>
+    <span class="talk-month">{{ t.date | date: "%b %Y" }}</span>
+  </div>
+  <div class="talk-body">
+    <div class="talk-meta">
+      {% if t.type == "invited" %}<span class="talk-badge invited">Invited talk</span>{% else %}<span class="talk-badge">Group</span>{% endif %}
+      {% if t.cancelled %}<span class="talk-badge cancelled">Cancelled</span>{% endif %}
+      <span>{{ t.date | date: "%a" }} · {{ t.time | default: info.time | default: "Time TBA" }}</span>
+      {% assign loc = t.location | default: info.location %}
+      {% if loc and loc != "" %}<span>· {{ loc }}</span>{% endif %}
+    </div>
+    <h3 class="talk-title">{{ t.title | default: "Title TBA" }}</h3>
+    <div class="talk-speaker">
+      {% if photo %}<img src="{{ photo | relative_url | uri_escape }}" alt="" loading="lazy" {% include fallback.html %}>{% endif %}
+      <span>
+        {% if speaker %}
+          {% if link %}<a href="{{ link | relative_url }}">{{ speaker }}</a>{% else %}{{ speaker }}{% endif %}
+        {% else %}
+          <em>Speaker TBD</em>
+        {% endif %}
+        {% if affiliation %}<span class="talk-affiliation">{{ affiliation }}</span>{% endif %}
+      </span>
+    </div>
+    {% if t.note %}<p class="talk-note">{{ t.note | markdownify | remove: "<p>" | remove: "</p>" }}</p>{% endif %}
+    {% if t.abstract or t.bio %}
+      <details class="talk-details">
+        <summary>Abstract{% if t.bio %} &amp; speaker bio{% endif %}</summary>
+        {% if t.abstract %}{{ t.abstract | markdownify }}{% endif %}
+        {% if t.bio %}<p><strong>Bio.</strong> {{ t.bio | markdownify | remove: "<p>" | remove: "</p>" }}</p>{% endif %}
+      </details>
+    {% endif %}
+    {% if t.slides or t.recording or t.paper %}
+      <div class="talk-links">
+        {% if t.slides %}{% include button.html type="slides" link=t.slides style="bare" %}{% endif %}
+        {% if t.recording %}{% include button.html icon="fa-solid fa-video" text="Recording" link=t.recording style="bare" %}{% endif %}
+        {% if t.paper %}{% include button.html type="paper" link=t.paper style="bare" %}{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>

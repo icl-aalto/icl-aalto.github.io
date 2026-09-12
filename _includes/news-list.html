@@ -1,0 +1,14 @@
+{% comment %}
+  website-agent: 渲染 _data/news.yaml
+  用法: {% include news-list.html limit=6 %}
+{% endcomment %}
+{% assign items = site.data.news | sort: "date" | reverse %}
+{% if include.limit %}{% assign items = items | slice: 0, include.limit %}{% endif %}
+<ul class="news-list">
+  {% for n in items %}
+    <li>
+      <time datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%b %Y" }}</time>
+      <span>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+    </li>
+  {% endfor %}
+</ul>
