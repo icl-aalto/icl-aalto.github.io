@@ -13,7 +13,6 @@ seminar:
 # {% include icon.html icon="fa-solid fa-person-chalkboard" %}Seminar
 
 Our bi-weekly lab seminar, where group members present their work and we host invited speakers.
-External visitors are welcome; please get in touch if you would like to attend or give a talk.
 
 {% assign info = page.seminar %}
 <p class="seminar-facts">
