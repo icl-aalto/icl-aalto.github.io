@@ -24,4 +24,6 @@ jobs:
 
   build-site:
     needs: update-citations
+    # website-agent: still build when update-citations is skipped (first run)
+    if: ${{ !cancelled() && !failure() }}
     uses: ./.github/workflows/build-site.yaml
