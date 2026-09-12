@@ -7,6 +7,21 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Research
 
+✉ corresponding author · † equal contribution
+
+
+## Preprints & Under Review
+
+{% include list.html data="citations" component="citation" style="rich" filter="type == 'preprint'" years="false" %}
+
+{% include section.html %}
+
+## Selected Publications
+
+{% include list.html data="citations" component="citation" style="rich" filter="highlight == true and type != 'preprint'" years="false" %}
+
+{% include section.html %}
+
 ## Support
 
 Our research is supported by the ELLIS Institute Finland, Aalto University and the Helsinki Institute for Information Technology (HIIT).
@@ -20,21 +35,6 @@ We gratefully acknowledge computational resources provided by the Aalto Triton c
   <a href="https://csc.fi/en/" title="CSC – IT Center for Science"><img src="{{ "images/support/csc.svg" | relative_url }}" alt="CSC – IT Center for Science"><span>CSC</span></a>
   <a href="https://www.lumi-supercomputer.eu/" title="LUMI supercomputer"><img src="{{ "images/support/lumi.png" | relative_url }}" alt="LUMI supercomputer" class="flat"><span>LUMI</span></a>
 </div>
-
-{% include section.html %}
-
-✉ corresponding author · † equal contribution
-
-
-## Preprints & Under Review
-
-{% include list.html data="citations" component="citation" style="rich" filter="type == 'preprint'" years="false" %}
-
-{% include section.html %}
-
-## Selected Publications
-
-{% include list.html data="citations" component="citation" style="rich" filter="highlight == true and type != 'preprint'" years="false" %}
 
 {% include section.html %}
 
