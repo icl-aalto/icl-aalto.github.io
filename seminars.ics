@@ -1,0 +1,65 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ICL//Seminar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Intelligent Convergence Lab Seminar
+X-WR-TIMEZONE:Europe/Helsinki
+BEGIN:VTIMEZONE
+TZID:Europe/Helsinki
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0300
+TZNAME:EEST
+DTSTART:19700329T030000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0200
+TZNAME:EET
+DTSTART:19701025T040000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260529-wenwen-hou@intelligent-convergence-lab
+DTSTAMP:20260912T225736Z
+DTSTART;TZID=Europe/Helsinki:20260529T153000
+DTEND;TZID=Europe/Helsinki:20260529T163000
+SUMMARY:Wenwen Hou: Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection
+URL:https://icl-aalto.github.io/seminar/
+END:VEVENT
+BEGIN:VEVENT
+UID:20260625-doudou-zhang@intelligent-convergence-lab
+DTSTAMP:20260912T225736Z
+DTSTART;TZID=Europe/Helsinki:20260625T153000
+DTEND;TZID=Europe/Helsinki:20260625T163000
+SUMMARY:Doudou Zhang: Generative Modeling via Drifting
+URL:https://icl-aalto.github.io/seminar/
+END:VEVENT
+BEGIN:VEVENT
+UID:20260806-yivan-zhang@intelligent-convergence-lab
+DTSTAMP:20260912T225736Z
+DTSTART;TZID=Europe/Helsinki:20260806T100000
+DTEND;TZID=Europe/Helsinki:20260806T110000
+SUMMARY:Yivan Zhang: An Algebraic Approach to Modeling Behavior in Reinforcement Learning Systems
+URL:https://icl-aalto.github.io/seminar/
+END:VEVENT
+BEGIN:VEVENT
+UID:20261002-weiguo-pian@intelligent-convergence-lab
+DTSTAMP:20260912T225736Z
+DTSTART;TZID=Europe/Helsinki:20261002T153000
+DTEND;TZID=Europe/Helsinki:20261002T163000
+SUMMARY:Weiguo Pian: Lab seminar
+URL:https://icl-aalto.github.io/seminar/
+END:VEVENT
+BEGIN:VEVENT
+UID:20261016-science-it-rse-support@intelligent-convergence-lab
+DTSTAMP:20260912T225736Z
+DTSTART;TZID=Europe/Helsinki:20261016T153000
+DTEND;TZID=Europe/Helsinki:20261016T163000
+SUMMARY:Science-IT RSE Support: Research Software Engineering Support at Aalto
+URL:https://icl-aalto.github.io/seminar/
+END:VEVENT
+END:VCALENDAR
