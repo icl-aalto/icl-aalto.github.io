@@ -64,6 +64,8 @@ sass:
 include:
   - _styles
   - _scripts
+  # website-agent: 让 GitHub Pages 不再二次运行 Jekyll (否则 _styles/ 等下划线目录会 404)
+  - .nojekyll
 
 # force jekyll to exclude certain files/folders
 exclude:
