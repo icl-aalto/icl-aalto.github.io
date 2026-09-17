@@ -634,4 +634,18 @@ header[data-big] .logo:has(svg[data-lockup]) {
   color: var(--primary);
 }
 
+.team-wide {
+  width: min(1240px, 100vw - 80px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1100px) {
+  .team-wide {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+}
+
 /*# sourceMappingURL=website-agent.css.map */
