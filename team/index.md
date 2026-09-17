@@ -32,6 +32,6 @@ nav:
 
 {% include team-section.html role="postdoc" title="Postdocs" wide=true %}
 {% include team-section.html role="phd" title="PhD Students" %}
-{% include team-section.html role="intern,research-assistant,visitor" title="Interns, Research Assistants & Visitors" %}
+{% include team-section.html role="intern,collaborating-phd,research-assistant,visitor" title="Interns, Research Assistants & Visitors" %}
 {% include team-section.html role="master" title="Master Thesis Students" nowrap_note=true %}
 {% include team-section.html role="alumni" title="Alumni" empty="Our alumni will be listed here." %}

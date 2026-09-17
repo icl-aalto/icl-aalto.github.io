@@ -2,6 +2,6 @@
 name: "Joona Sorjonen"
 image: "images/team/joona-sorjonen.svg"
 role: "master"
-order: 8
+order: 9
 affiliation: "Aalto CS · Thesis with Sarake Oy"
 ---

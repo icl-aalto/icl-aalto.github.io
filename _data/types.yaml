@@ -227,6 +227,10 @@ intern:
   icon: fa-solid fa-flask
   description: Research Intern
 
+collaborating-phd:
+  icon: fa-solid fa-handshake-angle
+  description: Collaborating PhD Student
+
 research-assistant:
   icon: fa-solid fa-user-gear
   description: Research Assistant
