@@ -661,3 +661,18 @@ header[data-big] .logo:has(svg[data-lockup]) {
 .support-logos a:hover span {
   color: var(--primary);
 }
+
+// 团队卡片区比正文宽 (正文保持 1000px 栏宽): 从栏里“撑出去”, 一行放得下 4 个人
+.team-wide {
+  width: min(1240px, calc(100vw - 80px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1100px) {
+  .team-wide {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+}

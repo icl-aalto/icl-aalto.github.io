@@ -2,11 +2,10 @@
 name: "Zheyue Tan"
 image: "images/team/zheyue-tan.jpg"
 role: "phd"
-description: "PhD Student"
+program: "PhD Student"
 order: 5
 since: "2025-01"
-affiliation: "Doctoral Researcher, Aalto CS"
-note: "Efficient agentic RL systems for LLMs"
+affiliation: "Aalto CS"
 education:
   - degree: "M.Eng."
     school: "Zhejiang University"
