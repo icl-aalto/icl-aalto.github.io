@@ -1,4 +1,6 @@
 ---
+# 暂时下架 (用户 2026-09-18 要求): 删掉下面这行 published 即恢复
+published: false
 name: "Zheyue Tan"
 image: "images/team/zheyue-tan.jpg"
 role: "phd"
