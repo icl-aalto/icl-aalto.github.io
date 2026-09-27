@@ -9,24 +9,6 @@
 # Author markers: ✉ corresponding, † equal contribution. Lab PI in bold.
 
 # ---------------- under review
-- title: Informing Acquisition Functions via Foundation Models for Molecular Discovery
-  authors: ["**Qi Chen**✉", Fabio Ramos, Alan Aspuru-Guzik, "Florian Shkurti✉"]
-  publisher: arXiv preprint
-  date: 2025-12-01
-  type: preprint
-  highlight: true
-  link: https://arxiv.org/abs/2512.13935
-  buttons:
-    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2512.13935" }
-  tags: [Bayesian optimization, AI for science, foundation models]
-
-- title: Constrained Look-ahead Guidance for Interference-Aware Flow Editing
-  authors: [Doudou Zhang, "**Qi Chen**✉"]
-  publisher: Under review
-  type: preprint
-  highlight: true
-  tags: [generative models, flow models]
-
 - title: "Position: Dataset Misuse Risk Evaluation Requires Operationalizing the Burden of Proof"
   authors: [Xing Shen, Yifan Qin, Gezheng Xu, "**Qi Chen**", Changjian Shui]
   publisher: Under review
@@ -35,6 +17,25 @@
   tags: [trustworthy AI]
 
 # ---------------- published
+- title: Informing Acquisition Functions via Foundation Models for Molecular Discovery
+  authors: ["**Qi Chen**✉", Fabio Ramos, Alan Aspuru-Guzik, "Florian Shkurti✉"]
+  publisher: NeurIPS 2026
+  date: 2026-12-01
+  type: paper
+  highlight: true
+  link: https://arxiv.org/abs/2512.13935
+  buttons:
+    - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2512.13935" }
+  tags: [Bayesian optimization, AI for science, foundation models]
+
+- title: Constrained Look-ahead Guidance for Interference-Aware Flow Editing
+  authors: [Doudou Zhang, "**Qi Chen**✉"]
+  publisher: NeurIPS 2026
+  date: 2026-12-01
+  type: paper
+  highlight: true
+  tags: [generative models, flow models]
+
 - title: Discretized Density-Guided Source-Free Adaptation for Continuous Targets
   authors: [Gezheng Xu, "**Qi Chen**", Qiuhao Zeng, Charles Ling, Boyu Wang]
   publisher: ICML 2026 (Spotlight, 2.2%)
