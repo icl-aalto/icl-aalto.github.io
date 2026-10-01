@@ -394,12 +394,21 @@ header[data-dark="false"] .subtitle {
 }
 
 // 完整标志 (图形 + 文字) 作页头 logo 时需要更高, 否则副标题那行字太小
-header .logo:has(svg[data-lockup]) {
+header .logo:has(svg[data-lockup]),
+header .logo:has(img) {
   height: 58px;
 }
 
-header[data-big] .logo:has(svg[data-lockup]) {
+header[data-big] .logo:has(svg[data-lockup]),
+header[data-big] .logo:has(img) {
   height: 130px;
+}
+
+// 位图 logo (已渲染好的 PNG): 保持比例, 不被拉伸
+header .logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 // ---- seminar
