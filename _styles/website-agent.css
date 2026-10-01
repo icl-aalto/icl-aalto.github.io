@@ -377,12 +377,20 @@ header[data-dark=false] .subtitle {
     display: none;
   }
 }
-header .logo:has(svg[data-lockup]) {
+header .logo:has(svg[data-lockup]),
+header .logo:has(img) {
   height: 58px;
 }
 
-header[data-big] .logo:has(svg[data-lockup]) {
+header[data-big] .logo:has(svg[data-lockup]),
+header[data-big] .logo:has(img) {
   height: 130px;
+}
+
+header .logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 .seminar-facts {
