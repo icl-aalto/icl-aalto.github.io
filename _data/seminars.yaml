@@ -27,11 +27,13 @@
   type: internal
   member: wenwen-hou
   title: "Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection"
+  paper: https://arxiv.org/abs/2506.04695
 
 - date: 2026-06-25
   type: internal
   member: doudou-zhang
   title: "Generative Modeling via Drifting"
+  paper: https://arxiv.org/abs/2602.04770
 
 - date: 2026-08-06
   time: "10:00-11:00"
@@ -61,9 +63,18 @@
 - date: 2026-10-02
   type: internal
   member: weiguo-pian
+  title: "Continual Self-Evolving of LLM Agent"
 
 - date: 2026-10-16
   type: invited
   speaker: "Science-IT RSE Support"
   affiliation: "Aalto University"
   title: "Research Software Engineering Support at Aalto"
+
+- date: 2026-10-30
+  type: internal
+  member: braghadeesh-lakshminarayanan
+  title: "Diffusion Models for Predictive Control"
+
+- date: 2026-11-13
+  type: internal
