@@ -25,8 +25,9 @@
         <span class="member-role">{{ title }}</span>
         <span class="member-since">{% if m.since %}Joined {{ m.since | append: "-01" | date: "%b %Y" }}{% endif %}</span>
         <span class="member-affiliation">{{ m.affiliation }}</span>
-        <span class="member-extra{% if m.education or m.note %} has-content{% endif %}">
-          {% for e in m.education %}<b class="member-degree">{{ e.degree }}</b><span class="member-school">{{ e.school }}</span>{% endfor %}
+        <span class="member-extra{% if m.education or m.note %} has-content{% endif %}{% if m.education_inline %} inline{% endif %}">
+          {% if m.education_inline %}<span class="member-edu-line">{% for e in m.education %}{% unless forloop.first %} · {% endunless %}<b class="member-degree">{{ e.degree }}</b> {{ e.school }}{% endfor %}</span>
+          {% else %}{% for e in m.education %}<b class="member-degree">{{ e.degree }}</b><span class="member-school">{{ e.school }}</span>{% endfor %}{% endif %}
           {% if m.note %}<span class="member-note">{{ m.note }}</span>{% endif %}
         </span>
         <span class="member-cosup">{% if m.cosupervisors and m.program == nil %}Co-supervised with {{ m.cosupervisors | map: "name" | array_to_sentence_string }}{% endif %}</span>

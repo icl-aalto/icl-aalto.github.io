@@ -236,6 +236,23 @@
   text-align: left;
 }
 
+// education_inline: true -> 多个学位排成一行 (适合都是硕士、分开列显得啰嗦的情况)
+.member-extra.has-content.inline {
+  display: block;
+  text-align: center;
+}
+
+.member-edu-line {
+  display: block;
+  font-size: 0.78rem;   // 比分行版小一点, 两个学位才放得下一行
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.member-edu-line .member-degree {
+  margin-right: 2px;
+}
+
 .member-degree {
   font-size: 0.75rem;
   font-weight: var(--semi-bold);

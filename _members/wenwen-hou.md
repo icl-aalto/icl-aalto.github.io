@@ -6,6 +6,7 @@ description: "PhD Student"
 affiliation: "ELLIS Institute Finland · Aalto CS"
 since: "2026-03"
 order: 2
+education_inline: true
 education:
   - degree: "M.Phil."
     school: "HKUST (Guangzhou)"

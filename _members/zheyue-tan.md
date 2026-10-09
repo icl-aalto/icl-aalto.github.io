@@ -6,6 +6,7 @@ program: "PhD Student"
 order: 5
 since: "2026-09"
 affiliation: "Aalto CS"
+note: "Doctoral studies since Jan 2025"
 education:
   - degree: "M.Eng."
     school: "Zhejiang University"
