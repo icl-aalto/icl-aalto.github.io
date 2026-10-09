@@ -226,6 +226,22 @@
   text-align: left;
 }
 
+.member-extra.has-content.inline {
+  display: block;
+  text-align: center;
+}
+
+.member-edu-line {
+  display: block;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.member-edu-line .member-degree {
+  margin-right: 2px;
+}
+
 .member-degree {
   font-size: 0.75rem;
   font-weight: var(--semi-bold);
