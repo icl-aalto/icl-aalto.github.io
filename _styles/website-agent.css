@@ -186,6 +186,14 @@
   margin-top: 2px;
 }
 
+.member-role-note {
+  display: block;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--dark-gray);
+}
+
 .member-since {
   font-size: 0.85rem;
   color: var(--dark-gray);
