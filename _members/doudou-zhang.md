@@ -9,8 +9,6 @@ order: 3
 education:
   - degree: "M.Phil."
     school: "HKUST (Guangzhou)"
-  - degree: "B.Eng."
-    school: "Wuhan University"
 links:
   home-page: "https://zhangdoudou.github.io/"
 ---

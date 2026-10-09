@@ -14,8 +14,6 @@ cosupervisors:
 education:
   - degree: "M.Sc."
     school: "ShanghaiTech University"
-  - degree: "B.Sc."
-    school: "China Pharmaceutical University"
 links:
   home-page: "https://yilinchen1205.github.io/"
 ---

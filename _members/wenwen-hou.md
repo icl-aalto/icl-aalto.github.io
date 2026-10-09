@@ -11,8 +11,6 @@ education:
     school: "HKUST (Guangzhou)"
   - degree: "M.Sc."
     school: "CUHK"
-  - degree: "B.Eng."
-    school: "Xi’an Jiaotong University"
 links:
   home-page: "https://sites.google.com/view/wenwen-hou"
 ---
