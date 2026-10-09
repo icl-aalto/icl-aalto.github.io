@@ -4,9 +4,9 @@ image: "images/team/zheyue-tan.jpg"
 role: "phd"
 program: "PhD Student"
 order: 5
+role_note: "Doctoral studies since Jan 2025"
 since: "2026-09"
 affiliation: "Aalto CS"
-note: "Doctoral studies since Jan 2025"
 education:
   - degree: "M.Eng."
     school: "Zhejiang University"

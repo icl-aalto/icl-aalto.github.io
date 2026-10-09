@@ -22,7 +22,7 @@
       <a class="member-card" href="{{ m.url | relative_url }}">
         <img class="member-photo" src="{{ m.image | relative_url | uri_escape }}" alt="{{ m.name }}" loading="lazy" {% include fallback.html %}>
         <span class="member-name">{{ m.name }}</span>
-        <span class="member-role">{{ title }}</span>
+        <span class="member-role">{{ title }}{% if m.role_note %}<span class="member-role-note">{{ m.role_note }}</span>{% endif %}</span>
         <span class="member-since">{% if m.since %}Joined {{ m.since | append: "-01" | date: "%b %Y" }}{% endif %}</span>
         <span class="member-affiliation">{{ m.affiliation }}</span>
         <span class="member-extra{% if m.education or m.note %} has-content{% endif %}{% if m.education_inline %} inline{% endif %}">

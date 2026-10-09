@@ -195,6 +195,15 @@
   margin-top: 2px;
 }
 
+// role_note: 职位那行下面的小字 (比如入学时间和转组时间不一样)
+.member-role-note {
+  display: block;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--dark-gray);
+}
+
 .member-since {
   font-size: 0.85rem;
   color: var(--dark-gray);
