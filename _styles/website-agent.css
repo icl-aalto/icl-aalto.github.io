@@ -188,10 +188,13 @@
 
 .member-role-note {
   display: block;
-  font-size: 0.78rem;
+  margin-top: 4px;
+  font-size: 0.7rem;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--dark-gray);
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .member-since {
