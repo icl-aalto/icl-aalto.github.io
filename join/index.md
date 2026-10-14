@@ -39,63 +39,11 @@ including if you plan to apply through one of the calls below.
 
 ## Open Calls
 
-### ELLIS Institute Finland: PhD & Postdoc Call
-
 {% capture content %}
-**Deadline: 21 September 2026**
+No call is open right now. We still welcome expressions of interest — fill out the form above
+and we will get in touch when a suitable call opens.
 {% endcapture %}
-{% include alert.html type="warning" content=content %}
-
-We are recruiting **PhD students and postdocs** through the ELLIS Institute Finland autumn 2026 call.
-Qi Chen is a scientific advisor for the theme **Continually Learning and Self-Improving AI**,
-covering continual learning, adaptive agents, and AI systems that learn and improve over time.
-The call has two application tracks:
-
-{% capture track1 %}
-**PhD & Postdoc positions**
-
-Doctoral and postdoctoral positions at the ELLIS Institute Finland.
-
-{% include button.html type="external" text="Apply: PhD & Postdoc call" link="https://www.ellisinstitute.fi/postdoc-and-phd-recruit-autumn-2026" %}
-{% endcapture %}
-{% capture track2 %}
-**Entrepreneurial Postdoc**
-
-For researchers interested in turning AI research into a startup.
-
-{% include button.html type="external" text="Apply: Entrepreneurial Postdoc" link="https://www.ellisinstitute.fi/entrepreneurial-postdoc-recruit-autumn-2026" %}
-{% endcapture %}
-{% include cols.html col1=track1 col2=track2 %}
-
-### HIIT Postdoctoral Fellow Positions
-
-{% capture content %}
-**Deadline: 4 October 2026, 23:59 (UTC+3)**
-{% endcapture %}
-{% include alert.html type="warning" content=content %}
-
-The [Helsinki Institute for Information Technology (HIIT)](https://www.hiit.fi/hiit-postdoctoral-fellow-positions-in-computer-science)
-is hiring **Postdoctoral Fellows in Computer Science** at Aalto University and the University of Helsinki.
-Qi Chen is one of the listed supervisors (generative models, continual learning, learning theory).
-
-- **Duration:** up to three years, flexible start date; fully funded, including salary and travel/publication costs
-- **Eligibility:** a PhD (or soon) in computer science, statistics, mathematics or a related field, with a strong publication record
-- **Application:** cover letter (1–2 pages), preliminary research plan (3–5 pages), CV with publication list, doctoral transcript and degree certificate,
-  and contact details of 2–3 referees. If you would like to work with us, say so and explain your motivation in the cover letter.
-
-{%
-  include button.html
-  type="external"
-  text="Apply via HIIT"
-  link="https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/HIIT--Postdoctoral-Fellow-positions-in-Computer-Science_R47830/apply"
-%}
-{%
-  include button.html
-  type="website"
-  text="Full call"
-  link="https://www.hiit.fi/hiit-postdoctoral-fellow-positions-in-computer-science"
-  style="bare"
-%}
+{% include alert.html type="info" content=content %}
 
 {% include section.html %}
 
@@ -103,6 +51,29 @@ Qi Chen is one of the listed supervisors (generative models, continual learning,
 
 These calls are closed. If you are interested in similar opportunities, please fill out the
 [expression of interest form](https://docs.google.com/forms/d/e/1FAIpQLSdE-5rMAzPTBXCSUJrP7hCS0aPt7KkufBdVhhEZoajdDn6B6A/viewform?usp=dialog).
+
+<div class="past-call" markdown="1">
+
+### HIIT Postdoctoral Fellow Positions <span class="call-closed">Closed</span>
+
+[Postdoctoral Fellow positions in Computer Science](https://www.hiit.fi/hiit-postdoctoral-fellow-positions-in-computer-science)
+at Aalto University and the University of Helsinki, through the Helsinki Institute for Information Technology.
+Qi Chen was one of the listed supervisors (generative models, continual learning, learning theory).
+The call closed on 4 October 2026.
+
+</div>
+
+<div class="past-call" markdown="1">
+
+### ELLIS Institute Finland: PhD & Postdoc Call <span class="call-closed">Closed</span>
+
+PhD and postdoc positions through the [ELLIS Institute Finland autumn 2026 call](https://www.ellisinstitute.fi/postdoc-and-phd-recruit-autumn-2026),
+including an [Entrepreneurial Postdoc](https://www.ellisinstitute.fi/entrepreneurial-postdoc-recruit-autumn-2026) track
+for researchers interested in turning AI research into a startup.
+Qi Chen was a scientific advisor for the theme **Continually Learning and Self-Improving AI**.
+The call closed on 21 September 2026.
+
+</div>
 
 <div class="past-call" markdown="1">
 
