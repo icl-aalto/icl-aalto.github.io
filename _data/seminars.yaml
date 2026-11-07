@@ -1,5 +1,7 @@
 # Seminar / 组会日程。一条 = 一个报告; 同一天两个报告就写两条。
 # 页面按访客当天日期自动分成 Upcoming / Past; /seminars.ics 可订阅到日历。
+# 组会表格 (Google Sheet) 里的 slides 链接不放到网站上 (用户 2026-11-07 决定): 都是 Aalto SharePoint 个人文件,
+# 外部访客打不开, 链接本身还会暴露内部路径。表格里的 paper 链接可以放。
 #
 # - date: 2026-10-01             # 必填, YYYY-MM-DD
 #   time: "14:00-15:00"          # 可选, 赫尔辛基时间; 不写则用 seminar/index.md 里的默认时间
@@ -77,4 +79,12 @@
   title: "Diffusion Models for Predictive Control"
 
 - date: 2026-11-13
+  type: invited
+  speaker: "Cong Yu"
+  affiliation: "Aalto University"
+  title: "Training-inference mismatch"
+
+- date: 2026-11-27
   type: internal
+  member: yilin-chen
+  title: "Quantitative and interface-aware prediction of peptide–protein interactions by VITAL"
