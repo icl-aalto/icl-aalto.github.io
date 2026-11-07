@@ -26,6 +26,7 @@
   link: https://arxiv.org/abs/2512.13935
   buttons:
     - { type: paper, text: arXiv, link: "https://arxiv.org/pdf/2512.13935" }
+    - { type: source, text: Code, link: "https://github.com/livreQ/LLMAT" }
   tags: [Bayesian optimization, AI for science, foundation models]
 
 - title: Constrained Look-ahead Guidance for Interference-Aware Flow Editing

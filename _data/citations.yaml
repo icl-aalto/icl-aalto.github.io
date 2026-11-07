@@ -30,6 +30,9 @@
   - type: paper
     text: arXiv
     link: https://arxiv.org/pdf/2512.13935
+  - type: source
+    text: Code
+    link: https://github.com/livreQ/LLMAT
   tags:
   - Bayesian optimization
   - AI for science
